@@ -1,0 +1,10 @@
+
+%ol
+- @users.each do |user|
+  %li
+    %span= user.name
+    %span= user.email
+    %a{href: url("/users/#{user.id}/edit")} edit
+
+%a{href: url("/user/new")} create
+

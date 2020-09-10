@@ -1,0 +1,8 @@
+%form{action: url('/user/create'), method: "post"}
+  %fieldset
+    %label{for: "name"}
+    %input{type: "text", name: "name"}
+
+    %label{for: "email"}
+    %input{type: "email", name: "email"}
+  %button{type: "submit"} submit

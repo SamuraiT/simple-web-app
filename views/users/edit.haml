@@ -1,0 +1,9 @@
+%form{action: url("/users/#{@user.id}/edit"), method: "post"}
+  %input{type: "hidden", name: "_method", value: "put"}
+  %fieldset
+    %label{for: "name"} name
+    %input{type: "text", name: "name", value: "#{@user.name}"}
+    
+    %label{for: "email"}
+    %input{type: "email", name: "email", value: "#{@user.email}"}
+  %button{type: "submit"} submit

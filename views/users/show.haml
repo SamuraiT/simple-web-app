@@ -1,0 +1,7 @@
+
+%ol
+  %li= @user.name
+  %li= @user.email
+
+%a{href: url("/users/#{@user.id}/edit")} edit
+%a{href: url("/users/")} users list
