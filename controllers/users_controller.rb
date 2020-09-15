@@ -1,3 +1,5 @@
+require 'json'
+
 class UsersController < Sinatra::Base
   configure do
     set :views, "views"
@@ -35,4 +37,12 @@ class UsersController < Sinatra::Base
     @user.save
     redirect '/users/'
   end
+
+  post '/user/take' do
+    @user = User.new(name: params['name'], email: params["email"])
+    name_email = "#{@user.name}-#{@user.email}"
+    content_type :json
+    { name_email: name_email}.to_json
+  end
+
 end
